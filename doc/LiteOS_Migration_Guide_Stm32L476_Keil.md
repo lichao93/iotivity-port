@@ -199,16 +199,16 @@ Keil工具需要开发者自行购买，ST-Link的驱动程序可以从st link�
 <tr>
 	<td></td>
 	<td>link</td>
-	<td>IDE相关宏定义</td>
+	<td>与IDE相关的编译链接相关宏定义</td>
 </tr>
 <tr>
 	<td>platform</td>
-	<td>GD32190R-EVAL</td>
+	<td>GD32F190R-EVAL</td>
 	<td>GD190开发板systick及驱动相关代码</td>
 </tr>
 <tr>
 	<td></td>
-	<td>GD32450i-EVAL</td>
+	<td>GD32F450i-EVAL</td>
 	<td>GD450开发板systick及驱动相关代码</td>
 </tr>
 <tr>
@@ -248,12 +248,12 @@ Keil工具需要开发者自行购买，ST-Link的驱动程序可以从st link�
 </tr>
 <tr>
 	<td></td>
-	<td>GD32190R-EVAL-KEIL</td>
+	<td>GD32F190R-EVAL-KEIL</td>
 	<td>gd32f190开发板的keil工程目录</td>
 </tr>
 <tr>
 	<td></td>
-	<td>GD32450i-EVAL-KEIL</td>
+	<td>GD32F450i-EVAL-KEIL</td>
 	<td>gd32f450开发板的keil工程目录</td>
 </tr>
 <tr>

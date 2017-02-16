@@ -13,16 +13,16 @@
       <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
-          <Device>GD32F450IK</Device>
+          <Device>GD32F190R8</Device>
           <Vendor>GigaDevice</Vendor>
-          <PackID>GigaDevice.GD32F4xx_DFP.1.0.0</PackID>
-          <PackURL>http://gd32mcu.21ic.com/data/documents/yingyongruanjian/GD32F4</PackURL>
-          <Cpu>IROM(0x08000000,0x0300000) IRAM(0x20000000,0x030000) IRAM2(0x10000000,0x010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
+          <PackID>GigaDevice.GD32F1x0_DFP.2.0.0</PackID>
+          <PackURL>http://gd32mcu.com/pack/</PackURL>
+          <Cpu>IRAM(0x20000000-0x20001FFF) IROM(0x08000000-0x0800FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0GD32F4xx_3MB -FS08000000 -FL0300000 -FP0($$Device:GD32F450IK$Flash\GD32F4xx_3MB.FLM))</FlashDriverDll>
+          <StartupFile>"Startup\GD\GD32F1x0\startup_gd32f1x0.s" ("GD32F1x0 Startup Code")</StartupFile>
+          <FlashDriverDll>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0GD32F1x0_64 -FS08000000 -FL010000)</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:GD32F450IK$Device\Include\gd32f4xx.h</RegisterFile>
+          <RegisterFile>gd32f1x0.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -32,14 +32,14 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:GD32F450IK$SVD\GD32F4xx.svd</SFDFile>
+          <SFDFile>SFD\GD\GD32F1x0\GD32F1x0.SFR</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
-          <RegisterFilePath></RegisterFilePath>
-          <DBRegisterFilePath></DBRegisterFilePath>
+          <RegisterFilePath>GD\GD32F1x0\</RegisterFilePath>
+          <DBRegisterFilePath>GD\GD32F1x0\</DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -48,7 +48,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>HuaweiLiteOS</OutputName>
+          <OutputName>gd32f190R8T6</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -109,13 +109,13 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments> -REMAP -MPU</SimDllArguments>
+          <SimDllArguments> -REMAP</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
+          <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> -MPU</TargetDllArguments>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pCM4</TargetDlgDllArguments>
+          <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -173,7 +173,7 @@
             <AdsLsxf>1</AdsLsxf>
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
-            <AdsCpuType>"Cortex-M4"</AdsCpuType>
+            <AdsCpuType>"Cortex-M3"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
@@ -182,8 +182,8 @@
             <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
-            <RvdsVP>2</RvdsVP>
-            <hadIRAM2>1</hadIRAM2>
+            <RvdsVP>0</RvdsVP>
+            <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
             <useUlib>1</useUlib>
@@ -243,12 +243,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x30000</Size>
+                <Size>0x2000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x300000</Size>
+                <Size>0x10000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -273,7 +273,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x300000</Size>
+                <Size>0x10000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -298,12 +298,12 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x30000</Size>
+                <Size>0x2000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x10000000</StartAddress>
-                <Size>0x10000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -330,9 +330,9 @@
             <vShortWch>1</vShortWch>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>GD32F450IKH6</Define>
+              <Define>RAM_SIZE_LEVEL_0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\kernel\base\include;..\..\kernel\include;..\..\kernel\config;..\..\kernel\cmsis;..\..\kernel\cpu\arm\cortex-m4;..\..\kernel\link\keil;..\..\platform\GD32450i-EVAL;..\..\example\include</IncludePath>
+              <IncludePath>..\..\kernel\base\include;..\..\kernel\include;..\..\kernel\config;..\..\kernel\cmsis;..\..\kernel\cpu\arm\cortex-m3;..\..\kernel\link\keil;..\..\platform\GD32F190R-EVAL;..\..\example\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -353,7 +353,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -362,7 +362,7 @@
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>..\..\platform\GD32450i-EVAL\GD32F450-LiteOS.sct</ScatterFile>
+            <ScatterFile>.\startup\STM32F429I-LiteOS.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -453,27 +453,27 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>cpu/cm4</GroupName>
+          <GroupName>cpu/cm3</GroupName>
           <Files>
             <File>
               <FileName>los_hw.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\kernel\cpu\arm\cortex-m4\los_hw.c</FilePath>
+              <FilePath>..\..\kernel\cpu\arm\cortex-m3\los_hw.c</FilePath>
             </File>
             <File>
               <FileName>los_hw_tick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\kernel\cpu\arm\cortex-m4\los_hw_tick.c</FilePath>
+              <FilePath>..\..\kernel\cpu\arm\cortex-m3\los_hw_tick.c</FilePath>
             </File>
             <File>
               <FileName>los_hwi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\kernel\cpu\arm\cortex-m4\los_hwi.c</FilePath>
+              <FilePath>..\..\kernel\cpu\arm\cortex-m3\los_hwi.c</FilePath>
             </File>
             <File>
               <FileName>los_dispatch_keil.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\kernel\cpu\arm\cortex-m4\los_dispatch_keil.s</FilePath>
+              <FilePath>..\..\kernel\cpu\arm\cortex-m3\los_dispatch_keil.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -494,31 +494,6 @@
               <FileName>cmsis_liteos.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\kernel\cmsis\cmsis_liteos.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>platform/gd32f450i</GroupName>
-          <Files>
-            <File>
-              <FileName>los_bsp_adapter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\platform\GD32450i-EVAL\los_bsp_adapter.c</FilePath>
-            </File>
-            <File>
-              <FileName>los_bsp_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\platform\GD32450i-EVAL\los_bsp_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>los_bsp_key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\platform\GD32450i-EVAL\los_bsp_key.c</FilePath>
-            </File>
-            <File>
-              <FileName>los_bsp_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\platform\GD32450i-EVAL\los_bsp_led.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -593,12 +568,37 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>platform/gd32f190r</GroupName>
+          <Files>
+            <File>
+              <FileName>los_bsp_adapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\platform\GD32F190R-EVAL\los_bsp_adapter.c</FilePath>
+            </File>
+            <File>
+              <FileName>los_bsp_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\platform\GD32F190R-EVAL\los_bsp_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>los_bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\platform\GD32F190R-EVAL\los_bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>los_bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\platform\GD32F190R-EVAL\los_bsp_uart.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>startup</GroupName>
           <Files>
             <File>
               <FileName>los_startup_keil.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\platform\GD32450i-EVAL\los_startup_keil.s</FilePath>
+              <FilePath>..\..\platform\GD32F190R-EVAL\los_startup_keil.s</FilePath>
             </File>
           </Files>
         </Group>

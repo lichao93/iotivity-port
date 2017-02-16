@@ -95,8 +95,8 @@
 	<td>描述</td>
 	</tr>
 	<tr>
-	<td>GD32450i-EVAL V1.1单板</td>
-	<td>GD32450开发板(芯片型号GD32F450IKH6)</td>
+	<td>GD32F450i-EVAL V1.1单板</td>
+	<td>GD32F450开发板(芯片型号GD32F450IKH6)</td>
 	</tr>
 	<tr>
 	<td>PC机</td>
@@ -206,12 +206,12 @@ Keil工具需要开发者自行购买,GD32F190R-EVAL开发板的调试器是GD-L
 </tr>
 <tr>
 	<td>platform</td>
-	<td>GD32190R-EVAL</td>
+	<td>GD32F190R-EVAL</td>
 	<td>GD190开发板systick及驱动相关代码</td>
 </tr>
 <tr>
 	<td></td>
-	<td>GD32450i-EVAL</td>
+	<td>GD32F450i-EVAL</td>
 	<td>GD450开发板systick及驱动相关代码</td>
 </tr>
 <tr>
@@ -251,12 +251,12 @@ Keil工具需要开发者自行购买,GD32F190R-EVAL开发板的调试器是GD-L
 </tr>
 <tr>
 	<td></td>
-	<td>GD32190R-EVAL-KEIL</td>
+	<td>GD32F190R-EVAL-KEIL</td>
 	<td>gd32f190开发板的keil工程目录</td>
 </tr>
 <tr>
 	<td></td>
-	<td>GD32450i-EVAL-KEIL</td>
+	<td>GD32F450i-EVAL-KEIL</td>
 	<td>gd32f450开发板的keil工程目录</td>
 </tr>
 <tr>
@@ -270,7 +270,7 @@ Keil工具需要开发者自行购买,GD32F190R-EVAL开发板的调试器是GD-L
 获取Huawei LiteOS源代码之后，我们可以将自己本地已有工程的代码适配到LiteOS内核工程中进行应用开发。
 
 ## 6如何适配LiteOS内核工程开发
-本章节描述的内容以GD32450i-EVAL开发板的04_USART_Printf示例工程为基础，适配到LiteOS的GD32450i-EVAL-KEIL工程中，演示串口输出、按键中断及LED点亮功能。
+本章节描述的内容以GD32F450i-EVAL开发板的04_USART_Printf示例工程为基础，适配到LiteOS的GD32F450i-EVAL-KEIL工程中，演示串口输出、按键中断及LED点亮功能。
 
 ### GD32的开发资料获取
 - 从http://gd32mcu.21ic.com/下载相关的开发包
