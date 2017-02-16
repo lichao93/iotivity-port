@@ -20,7 +20,7 @@ LITE_OS_SEC_TEXT VOID LOS_BoadExampleTskfunc(VOID)
         LOS_EvbUartWriteStr("Board Test\n");
         LOS_TaskDelay(500);
         LOS_EvbLedControl(LOS_LED2, LED_OFF);
-		LOS_TaskDelay(500);
+        LOS_TaskDelay(500);
     }
 }
 void LOS_BoadExampleEntry(void)
@@ -54,8 +54,8 @@ int main(void)
 {
     UINT32 uwRet;
     /*
-			add you hardware init code here
-			for example flash, i2c , system clock ....
+		add you hardware init code here
+		for example flash, i2c , system clock ....
     */
 	//HAL_init();....
 	
