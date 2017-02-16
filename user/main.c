@@ -18,8 +18,9 @@ LITE_OS_SEC_TEXT VOID LOS_BoadExampleTskfunc(VOID)
     {
         LOS_EvbLedControl(LOS_LED2, LED_ON);
         LOS_EvbUartWriteStr("Board Test\n");
-        LOS_TaskDelay(100);
+        LOS_TaskDelay(500);
         LOS_EvbLedControl(LOS_LED2, LED_OFF);
+		LOS_TaskDelay(500);
     }
 }
 void LOS_BoadExampleEntry(void)
@@ -30,7 +31,7 @@ void LOS_BoadExampleEntry(void)
     (VOID)memset((void *)(&stTaskInitParam), 0, sizeof(TSK_INIT_PARAM_S));
     stTaskInitParam.pfnTaskEntry = (TSK_ENTRY_FUNC)LOS_BoadExampleTskfunc;
     stTaskInitParam.uwStackSize = LOSCFG_BASE_CORE_TSK_IDLE_STACK_SIZE;
-    stTaskInitParam.pcName = "boarddemo";
+    stTaskInitParam.pcName = "BoardDemo";
     stTaskInitParam.usTaskPrio = 10;
     uwRet = LOS_TaskCreate(&g_uwboadTaskID, &stTaskInitParam);
 
@@ -56,17 +57,16 @@ int main(void)
 			add you hardware init code here
 			for example flash, i2c , system clock ....
     */
-		//HAL_init();....
+	//HAL_init();....
 	
-		/*Init LiteOS kernel */
+	/*Init LiteOS kernel */
     uwRet = LOS_KernelInit();
     if (uwRet != LOS_OK) {
         return LOS_NOK;
     }
-		/* Enable LiteOS system tick interrupt */
+	/* Enable LiteOS system tick interrupt */
     LOS_EnableTick();
-		
-		
+	
     /* 
         Notice: add your code here
         here you can create task for your function 
