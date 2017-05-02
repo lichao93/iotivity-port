@@ -45,7 +45,7 @@ Core     /  **************************  - - - -\   |  Persistent  |  RNG  |
                                                   - - - - - - - - - - - - — -
                                              /   | Linux | Zephyr | FreeRTOS |
                                             /     - - - - - - - - - - - - - -
-                                       Ports     | Mynewt      |     Contiki |
+                                       Ports     | LiteOS | Mynewt | Contiki |
                                             \     - - - - - - - - - - - - - -
                                              \   |    Vendor defined ...     |
                                                   - - - - - - - - - - - - - -
