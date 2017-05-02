@@ -1,0 +1,10 @@
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util\oc_etimer.c
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util\oc_etimer.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util\oc_process.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util/pt/pt.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util/pt/lc.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util/pt/lc-switch.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\util\oc_timer.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\port/oc_clock.h
+.\objects\oc_etimer.o: ..\..\iotivity-constrained\port\liteos\config.h
+.\objects\oc_etimer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

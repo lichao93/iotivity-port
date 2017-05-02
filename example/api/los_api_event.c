@@ -68,7 +68,7 @@ VOID Example_Event(VOID)
    若100 Tick 后未读取到指定事件，读事件超时，任务直接唤醒*/
     dprintf("Example_Event wait event 0x%x \n",event_wait);
 
-    uwEvent = LOS_EventRead(&example_event, event_wait, LOS_WAITMODE_AND, 100);
+    uwEvent = LOS_EventRead(&example_event, event_wait, LOS_WAITMODE_AND, 1);
     if(uwEvent == event_wait)
     {
         dprintf("Example_Event,read event :0x%x\n",uwEvent);

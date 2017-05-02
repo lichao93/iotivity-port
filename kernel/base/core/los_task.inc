@@ -91,7 +91,7 @@ typedef struct tagStackInfo
     UINT32 uwSP;                                   /**<Task stack pointer                */
     UINT32 uwCurrUsed;                             /**<Current task stack usage      */
     UINT32 uwPeakUsed;                             /**<Task stack usage peak            */
-    BOOL   bOvf;                                   /**<Flag that indicates whether a task stack overflow occurs        */
+    UINTBOOL   bOvf;                                   /**<Flag that indicates whether a task stack overflow occurs        */
 } STACK_INFO_S;
 
 

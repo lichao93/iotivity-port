@@ -305,7 +305,7 @@ extern char _PT0_END;
 #elif defined (RAM_SIZE_LEVEL_2)
 #define OS_SYS_MEM_SIZE                                     0x00008000          // size
 #else
-#define OS_SYS_MEM_SIZE                                     0x00008000          // size
+#define OS_SYS_MEM_SIZE                                     0x0000B000          // size
 #endif
 /**
  * @ingroup los_config

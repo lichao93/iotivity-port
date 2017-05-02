@@ -1,0 +1,10 @@
+.\objects\cborparser_dup_string.o: ..\..\iotivity-constrained\deps\tinycbor\src\cborparser_dup_string.c
+.\objects\cborparser_dup_string.o: ..\..\iotivity-constrained\deps\tinycbor\src\cbor.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\cborparser_dup_string.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

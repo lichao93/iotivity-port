@@ -1,0 +1,17 @@
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\api\netbuf.c
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\netbuf.o: ..\..\gd32firmware\demo\inc\lwipopts.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/debug.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/arch.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/cc.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/lwip_cpu.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\netbuf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/netbuf.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/pbuf.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/err.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\ipv4\lwip/ip_addr.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/def.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/memp.h
+.\objects\netbuf.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/memp_std.h
+.\objects\netbuf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

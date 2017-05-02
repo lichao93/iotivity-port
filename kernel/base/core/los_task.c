@@ -60,7 +60,7 @@ LITE_OS_SEC_DATA LOS_DL_LIST                         g_stTaskTimerList;
 LITE_OS_SEC_DATA_INIT LOS_DL_LIST                    g_stLosFreeTask;
 LITE_OS_SEC_DATA_INIT LOS_DL_LIST                    g_stTskRecyleList;
 LITE_OS_SEC_BSS  TSK_SORTLINK_ATTRIBUTE_S            g_stTskSortLink;
-LITE_OS_SEC_BSS  BOOL                                g_bTaskScheduled;
+LITE_OS_SEC_BSS  UINTBOOL                                g_bTaskScheduled;
 /*lint -e64 -e552*/
 #if (LOSCFG_BASE_CORE_TSK_MONITOR == YES)
 TSKSWITCHHOOK g_pfnTskSwitchHook = NULL;
@@ -177,7 +177,7 @@ LITE_OS_SEC_TEXT VOID osTimerListDelete(LOS_TASK_CB *pstTaskCB)
 LITE_OS_SEC_TEXT VOID osTaskScan(VOID)
 {
     LOS_TASK_CB *pstTaskCB;
-    BOOL bNeedSchedule = FALSE;
+    UINTBOOL bNeedSchedule = FALSE;
     LOS_DL_LIST *pstListObject;
     UINT16 usTempStatus;
 
@@ -919,7 +919,7 @@ LITE_OS_SEC_TEXT_MINOR UINT16 LOS_TaskPriGet(UINT32 uwTaskID)
  *****************************************************************************/
 LITE_OS_SEC_TEXT_MINOR UINT32 LOS_TaskPriSet(UINT32 uwTaskID, UINT16 usTaskPrio)
 {
-    BOOL   bIsReady;
+    UINTBOOL   bIsReady;
     UINTPTR uvIntSave;
     LOS_TASK_CB *pstTaskCB;
     UINT16 usTempStatus;

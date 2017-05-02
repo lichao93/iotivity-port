@@ -210,9 +210,9 @@ LITE_OS_SEC_ALW_INLINE INLINE VOID LOS_ListDelete(LOS_DL_LIST *pstNode)
  *@see
  *@since Huawei LiteOS V100R001C00
  */
-LITE_OS_SEC_ALW_INLINE INLINE BOOL LOS_ListEmpty(LOS_DL_LIST *pstNode)
+LITE_OS_SEC_ALW_INLINE INLINE UINTBOOL LOS_ListEmpty(LOS_DL_LIST *pstNode)
 {
-    return (BOOL)(pstNode->pstNext == pstNode);
+    return (UINTBOOL)(pstNode->pstNext == pstNode);
 }
 
 /**

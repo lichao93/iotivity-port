@@ -462,7 +462,7 @@ typedef struct tagTskInfo
     UINT32              uwSP;                       /**< Task SP pointer                 */
     UINT32              uwCurrUsed;                 /**< Current task stack usage         */
     UINT32              uwPeakUsed;                 /**< Task stack usage peak             */
-    BOOL                bOvf;                       /**< Flag that indicates whether a task stack overflow occurs         */
+    UINTBOOL                bOvf;                       /**< Flag that indicates whether a task stack overflow occurs         */
 } TSK_INFO_S;
 
 /**

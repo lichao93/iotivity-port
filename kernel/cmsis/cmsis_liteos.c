@@ -685,6 +685,32 @@ osEvent osMessageGet(osMessageQId queue_id, UINT32 millisec)
 #endif
 }
 
+osStatus osMessageDelete (osMessageQId queue_id)
+{
+    INT32 res = 0;
+	int errcnt = 0;
+    if (queue_id == NULL)
+        return osErrorParameter;
+
+    //res = LOS_QueueDelete((UINT32 )queue_id);
+    while (LOS_OK != LOS_QueueDelete((UINT32 )queue_id))
+    {
+      LOS_TaskDelay(1);
+			errcnt++;
+			if (errcnt > 10)
+			{
+				res = LOS_NOK;
+				break;
+			}
+    }
+
+    if (res != 0)
+        return osErrorValue;
+
+    return osOK;
+
+}
+
 
 // Mail Queue Management Public API
 

@@ -1,0 +1,10 @@
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\api\oc_helpers.c
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\include\oc_helpers.h
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\util/oc_list.h
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\util/oc_mmem.h
+.\objects\oc_helpers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\oc_helpers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\oc_helpers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\oc_helpers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\port/oc_assert.h
+.\objects\oc_helpers.o: ..\..\iotivity-constrained\port/oc_log.h

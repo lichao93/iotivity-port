@@ -61,10 +61,12 @@ typedef signed char                                         INT8;
 typedef signed short                                        INT16;
 typedef signed int                                          INT32;
 typedef float                                               FLOAT;
+#ifdef LOS_TYPE_CON
 typedef double                                              DOUBLE;
+#endif
 typedef char                                                CHAR;
 
-typedef unsigned int                                        BOOL;
+typedef unsigned int                                        UINTBOOL;
 typedef unsigned long long                                  UINT64;
 typedef signed long long                                    INT64;
 typedef unsigned int                                        UINTPTR;
@@ -104,11 +106,11 @@ typedef unsigned long long  uint64_t;
 #endif  /*end of #ifndef LOS_TYPE_DEF*/
 
 #ifndef FALSE
-#define FALSE                                               ((BOOL)0)
+#define FALSE                                               ((UINTBOOL)0)
 #endif
 
 #ifndef TRUE
-#define TRUE                                                ((BOOL)1)
+#define TRUE                                                ((UINTBOOL)1)
 #endif
 
 #ifndef __cplusplus

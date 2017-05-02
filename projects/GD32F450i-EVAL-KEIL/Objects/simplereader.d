@@ -1,0 +1,9 @@
+.\objects\simplereader.o: ..\..\iotivity-constrained\deps\tinycbor\examples\simplereader.c
+.\objects\simplereader.o: ..\..\iotivity-constrained\deps\tinycbor\examples\../src/cbor.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\simplereader.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

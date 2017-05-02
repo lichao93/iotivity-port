@@ -1,0 +1,10 @@
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\api\netdb.c
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/netdb.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\netdb.o: ..\..\gd32firmware\demo\inc\lwipopts.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/debug.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/arch.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/cc.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/lwip_cpu.h
+.\objects\netdb.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\netdb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -271,7 +271,7 @@ INLINE UINT32 osMemCheckUsedNode(VOID *pPool, LOS_MEM_DYN_NODE *pstNode)
 }
 
 #else
-INLINE BOOL osMemIsNodeValid(const LOS_MEM_DYN_NODE *pstNode, const LOS_MEM_DYN_NODE *pstStartNode, const LOS_MEM_DYN_NODE *pstEndNode,
+INLINE UINTBOOL osMemIsNodeValid(const LOS_MEM_DYN_NODE *pstNode, const LOS_MEM_DYN_NODE *pstStartNode, const LOS_MEM_DYN_NODE *pstEndNode,
        const UINT8 *pucStartPool, const UINT8 *pucEndPool)
 {
     if (!OS_MEM_MIDDLE_ADDR(pstStartNode, pstNode, pstEndNode))

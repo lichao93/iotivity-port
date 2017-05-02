@@ -1,0 +1,10 @@
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\core\def.c
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\def.o: ..\..\gd32firmware\demo\inc\lwipopts.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/debug.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/arch.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/cc.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\port\GD32F4xx\arch/lwip_cpu.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/opt.h
+.\objects\def.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\def.o: ..\..\gd32firmware\Third_party\lwip-1.4.1\src\include\lwip/def.h

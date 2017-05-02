@@ -12,7 +12,6 @@
 
 #include "gd32f4xx.h"
 #include "system_gd32f4xx.h"
-#include "systick.h"
 
 #endif
 #ifdef GD32F190R8
@@ -41,7 +40,7 @@
 	global var
  *****************************************************************************/
 /* current system Freq , should be set according to the microchip */
-const unsigned int sys_clk_freq = 16000000;
+const unsigned int sys_clk_freq = 200000000;
 
 /* tick count per second , don't change this */
 const unsigned int tick_per_second = 1000;
@@ -117,7 +116,7 @@ void SysTick_Handler(void)
 	
 #ifdef GD32F4XX	
     /*add your code here */
-	  delay_decrement();
+	  //delay_decrement();
 #endif
 	
     return ;

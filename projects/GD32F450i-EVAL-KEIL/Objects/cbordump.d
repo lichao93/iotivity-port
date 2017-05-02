@@ -1,0 +1,12 @@
+.\objects\cbordump.o: ..\..\iotivity-constrained\deps\tinycbor\tools\cbordump\cbordump.c
+.\objects\cbordump.o: ..\..\iotivity-constrained\deps\tinycbor\src\cbor.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\cbordump.o: ..\..\iotivity-constrained\deps\tinycbor\src\cborjson.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+.\objects\cbordump.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

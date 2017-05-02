@@ -737,6 +737,8 @@ osStatus osMessagePut (osMessageQId queue_id, uint32_t info, uint32_t millisec);
 /// \note MUST REMAIN UNCHANGED: \b osMessageGet shall be consistent in every CMSIS-RTOS.
 osEvent osMessageGet (osMessageQId queue_id, uint32_t millisec);
 
+osStatus osMessageDelete (osMessageQId queue_id);
+
 #endif     // Message Queues available
 
 

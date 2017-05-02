@@ -1,0 +1,15 @@
+.\objects\random.o: ..\..\iotivity-constrained\port\liteos\random.c
+.\objects\random.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\random.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\random.o: ..\..\kernel\include\los_sys.h
+.\objects\random.o: ..\..\kernel\include\los_base.h
+.\objects\random.o: ..\..\kernel\link\keil\los_builddef.h
+.\objects\random.o: ..\..\kernel\include\los_typedef.h
+.\objects\random.o: ..\..\kernel\config\los_config.h
+.\objects\random.o: ..\..\kernel\include\los_printf.h
+.\objects\random.o: ..\..\kernel\include\los_list.h
+.\objects\random.o: ..\..\kernel\include\los_base.h
+.\objects\random.o: ..\..\kernel\include\los_errno.h
+.\objects\random.o: ..\..\kernel\cpu\arm\cortex-m4\los_hwi.h
+.\objects\random.o: ..\..\kernel\include\los_sys.h
+.\objects\random.o: ..\..\iotivity-constrained\port/oc_random.h
