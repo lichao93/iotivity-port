@@ -22,34 +22,34 @@ Contents
 IoTivity-Constrained Architecture
 ---------------------------------
 
-             OCF Applications (apps/*)
-            //////////////////////////
-            |  OCF Application APIs  |
-            |   (include/oc_api.h)   |
-            **************************
-  OCF       |  Client   //   Server  |
- Roles      |      Intermediate      |
-        \   **************************               Platform abstraction
-Cross-   \  | Memory     | Resource  |                    (port/*.h)
-Platform    | Management | Model     |             ************************
-Core     /  **************************  - - - -\   |  Persistent  |  RNG  |
-        /   |            | Messaging |  - - - -/   |  Storage     |       |
-            | Event      |***********|             ************************
-            | Queues     | Security  |             | Connectivity | Clock |
-            **************************             ************************
-             (api/*, messaging/coap/*,                      | |
-              security/*, util/*)                           \ /
-                                                             V
-                                                  Concrete implementations of
-                                                     platform abstraction
-                                                  - - - - - - - - - - - - — -
-                                             /   | Linux | Zephyr | FreeRTOS |
-                                            /     - - - - - - - - - - - - - -
-                                       Ports     | LiteOS | Mynewt | Contiki |
-                                            \     - - - - - - - - - - - - - -
-                                             \   |    Vendor defined ...     |
-                                                  - - - - - - - - - - - - - -
-                                              (port/linux/*, port/zephyr/*,...)
+               OCF Applications (apps/*)
+              //////////////////////////
+              |  OCF Application APIs  |
+              |   (include/oc_api.h)   |
+              **************************
+    OCF       |  Client   //   Server  |
+   Roles      |      Intermediate      |
+          \   **************************               Platform abstraction
+  Cross-   \  | Memory     | Resource  |                    (port/*.h)
+  Platform    | Management | Model     |             ************************
+  Core     /  **************************  - - - -\   |  Persistent  |  RNG  |
+          /   |            | Messaging |  - - - -/   |  Storage     |       |
+              | Event      |***********|             ************************
+              | Queues     | Security  |             | Connectivity | Clock |
+              **************************             ************************
+               (api/*, messaging/coap/*,                      | |
+                security/*, util/*)                           \ /
+                                                               V
+                                                    Concrete implementations of
+                                                       platform abstraction
+                                                    - - - - - - - - - - - - — -
+                                               /   | Linux | Zephyr | FreeRTOS |
+                                              /     - - - - - - - - - - - - - -
+                                         Ports     | LiteOS | Mynewt | Contiki |
+                                              \     - - - - - - - - - - - - - -
+                                               \   |    Vendor defined ...     |
+                                                    - - - - - - - - - - - - - -
+                                                (port/linux/*, port/zephyr/*,...)
 
 It's architecture addresses the following design goals:
 
