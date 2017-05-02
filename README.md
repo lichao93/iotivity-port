@@ -1,49 +1,167 @@
-![](./doc/meta/kernelapi/basicframe.png)
-##Huawei LiteOS基础内核
-华为物联网操作系统Huawei LiteOS是华为面向物联网领域开发的一个基于实时内核的轻量级操作系统。本项目属于华为物联网操作系统[Huawei LiteOS](http://developer.huawei.com/ict/cn/site-iot/product/liteos)基础内核源码(图示Basic Kernel)，目前仅开源基础内核，同时适配了STM32F412/F429/L476及GD32F190/F450开发板，后续会开放其他特性同时支持其他类型开发板。现有代码支持任务调度，内存管理，中断机制，队列管理，事件管理，IPC机制，时间管理，软定时器以及双向链表等常用数据结构。
+Getting Started
+---------------
+IoTivity-Constrained is an open-source software stack and library that
+implements the Open Connectivity Foundation (OCF) standards for the
+Internet of Things (IoT).
 
-##加入我们
-* 欢迎提交issue对关心的问题发起讨论
-* 欢迎提交PR参与特性建设
+It was designed to build IoT applications for resource-constrained
+hardware and software environments. It targets the wide array of
+embedded devices using low-power and low-cost MCUs that will proliferate the
+IoT landscape.
 
-##代码导读
-* doc - Kernel标准API测试文档以及IAR/Keil的第三方移植指导文档
-* example - Kernel标准API测试套
-* platform - Kernel支持的平台相关代码
-* kernel - Huawei_LiteOS操作系统的基础内核源码
-* Projects - IAR或Keil等IDE的kernel移植示例工程
+Contents
+--------
+- IoTivity-Constrained Architecture
+- Project directory structure
+- Pull dependencies
+- Building sample applications on Linux
+- Building sample applications on Zephyr
+- Building sample applications on RIOT OS and Contiki
+- Framework configuration
 
-##获取LiteOS最新代码和文档    
-* 代码地址：https://github.com/LITEOS/LiteOS_Kernel
-* 文档地址：https://github.com/LITEOS/LiteOS_Kernel/tree/master/doc
+IoTivity-Constrained Architecture
+---------------------------------
 
-##项目更新
-* 2016.9.6 - 支持IAR工程构建 
-* 2016.12.23 - 支持keil工程构建
-* 02017.1.24 - 支持GD32开发板
-* 02017.2.15 - 内核代码结构调整
+             OCF Applications (apps/*)
+            //////////////////////////
+            |  OCF Application APIs  |
+            |   (include/oc_api.h)   |
+            **************************
+  OCF       |  Client   //   Server  |
+ Roles      |      Intermediate      |
+        \   **************************               Platform abstraction
+Cross-   \  | Memory     | Resource  |                    (port/*.h)
+Platform    | Management | Model     |             ************************
+Core     /  **************************  - - - -\   |  Persistent  |  RNG  |
+        /   |            | Messaging |  - - - -/   |  Storage     |       |
+            | Event      |***********|             ************************
+            | Queues     | Security  |             | Connectivity | Clock |
+            **************************             ************************
+             (api/*, messaging/coap/*,                      | |
+              security/*, util/*)                           \ /
+                                                             V
+                                                  Concrete implementations of
+                                                     platform abstraction
+                                                  - - - - - - - - - - - - — -
+                                             /   | Linux | Zephyr | FreeRTOS |
+                                            /     - - - - - - - - - - - - - -
+                                       Ports     | LiteOS | Mynewt | Contiki |
+                                            \     - - - - - - - - - - - - - -
+                                             \   |    Vendor defined ...     |
+                                                  - - - - - - - - - - - - - -
+                                              (port/linux/*, port/zephyr/*,...)
 
-##开发板支持
-* STM32F412
-* STM32F429
-* STM32L476
-* GD32F190
-* GD32F450
+It's architecture addresses the following design goals:
 
-##主要特征
-* 实时操作系统内核
-* 轻量级
-* 低功耗
-* 快速启动
-* 可裁剪
-* 分散加载
+1) Laying down constraints: This is achieved through build-time
+configuration of a set of parameters that constrain the number of serviceable
+connections and requests, payload sizes, memory pool sizes, timeouts etc.
+These collectively characterize an acceptable workload for an
+application.
 
-##内核模块
-* core
-* cmsis
-* ipc
-* mem
-* misc
+2) Determinism: All memory is statically allocated, and requests fail
+gracefully whenever a workload exceeds the set constraints.
 
-##开源协议
-* 遵循BSD-3开源许可协议
+3) Common core: IoTivity-Constrained will be employed on diverse
+hardware-software environments.
+The architecture is therefore decoupled into a cross-platform
+common core with a set of interfaces into implementations of
+platform-specific code. This decoupling isolates all of the OCF standards
+related functionality from lower-level platform/environment specific
+code, that varies per deployment.
+
+4) Platform abstraction: These are a collection of interfaces with a
+key set of hooks that elicit a contract from implementations. The core
+framework talks via these interfaces to interact with platform specific
+functionality. Implementations may be built with any choice of embedded RTOS,
+network stack and hardware. Any such implementation then becomes a “port”.
+Ports currently exist for Linux, Zephyr, RIOT OS and Contiki.
+
+5) Lightweight design: The is achieved through tight coupling between stack
+layers and avoiding modularity unless warranted.
+
+Project directory structure
+---------------------------
+The IoTivity-Constrained source tree has the following directory structure:
+
+api/* contains the implementations of client/server APIs, the resource model
+and introspection layer, utility and helper functions to encode/decode to/from
+OCF’s data model, module for encoding and interpreting type 4 UUIDs, and
+handlers for the discovery, platform and device resources.
+
+messaging/coap/* contains a tailored CoAP implementation.
+
+security/* contains the handlers for secure core OCF resources.
+
+utils/* contains a few primitive building blocks used internally by the core
+framework.
+
+deps/* contains external project dependencies.
+deps/tinycbor/* contains the tinyCBOR project.
+deps/tinydtls/* contains the tinyDTLS project.
+
+include/* contains common (across modules) headers.
+include/oc_api.h contains client/server APIs.
+include/oc_rep.h contains helper functions to encode/decode to/from OCF’s
+data model.
+include/oc_helpers.h contains utility functions for allocating strings and
+arrays from pre-allocated memory pools.
+
+port/*.h outlines the platform abstraction.
+port/linux/* contains an implementation of a Linux port.
+port/zephyr/* contains an implementation of a Zephyr port.
+port/riot/* contains an implementation of a RIOT OS port.
+port/contiki/* contains an implementation of a Contiki port.
+
+apps/* contains sample OCF applications.
+
+Pull Dependencies
+-----------------
+Run “git submodule update --init” from <iotivity-constrained-root>/.
+
+Building sample applications on Linux
+-------------------------------------
+The entire build is specified in port/linux/Makefile. The output of the build
+consists of all sample application binaries that are stored under port/linux.
+
+Run “make” for a release mode build without debug output and security.
+Run “make DEBUG=1” for debug mode build with debug output and without security.
+Add “..SECURE=1” to the command-lines above for a complete build including
+tinyDTLS and modules that implement secure mode operation.
+
+Building sample applications on Zephyr (with qemu)
+--------------------------------------------------
+First set up your Zephyr development environment following the “Getting Started
+Guide” on
+https://www.zephyrproject.org/doc/getting_started/getting_started.html.
+
+Before running “make”, update port/zephyr/src/Makefile to include your choice
+of Zephyr sample from apps/.
+
+Run “source <Zephyr root>/zephyr-env.sh”.
+Run “make pristine && make” from port/zephyr.
+This should result in a complete build of the Zephyr kernel
+and subsystems, the IoTivity-Constrained framework, and the sample app.
+
+Clone the net-tools repository from gerrit.zephyrproject.org.
+Follow its README to set up a tap interface using loop-socat.sh and
+and loop-slip-tap.sh.
+This exposes a network interface on Linux to communicate with Zephyr’s
+IP stack and the sample app.
+
+Run “make qemu” from port/zephyr. This runs the chosen sample on Zephyr
+in qemu.
+
+Now run any appropriate Linux client/server sample against the Zephyr
+application to view the request/response flow.
+
+Building sample applications on RIOT OS and Contiki
+---------------------------------------------------
+Please refer to port/riot/README and port/contiki/README for instructions.
+
+Framework configuration
+-----------------------
+Build-time configuration options for an application are to be set in the file
+named config.h. This needs to be present in one of the include paths.
+Pre-populated configurations for the samples for all targets are present
+in port/<platform>/config.h.
